@@ -30,8 +30,17 @@ const Account = props => {
               
             });
 
+            const token = session.getIdToken().getJwtToken();
+
+            if(!token) {
+              return reject("no ID token found in session")
+            }
+
             resolve({
               user,
+              headers: {
+                Authorization: token
+              },
               ...session,
               ...attributes,
             });
