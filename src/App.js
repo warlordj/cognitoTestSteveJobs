@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { Account } from './components/Accounts';
+import Signup from './components/Signup';
+import Login from './components/Login';
+import Status from './components/Status';
+import Settings from "./components/Settings";
+import ForgotPassword from './components/ForgotPassword';
+import ConfirmSignup from './components/ConfirmSignup';
 
-function App() {
+export default () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Account>
+      <Status/>
+      <Signup/>
+      <Login/>
+      <ConfirmSignup/>
+      <ForgotPassword/>
+      <Settings/>
+    </Account>
   );
-}
-
-export default App;
+};
